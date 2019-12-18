@@ -6,5 +6,5 @@
 - NetCoreLogger.Tests - Юнит-тесты
 - ConsoleApp - Консольное приложение для примера использования
 
-# Использование:
+# Использование
 Читайте тут: https://zidium.net/wiki/api/dot-net/logger-extentions/net-core-logging
