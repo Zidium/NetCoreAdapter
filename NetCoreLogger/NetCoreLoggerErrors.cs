@@ -18,13 +18,13 @@ namespace Zidium
 
         private bool _isEnabled;
 
-        public void Log<TState>(Microsoft.Extensions.Logging.LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             if (!_isEnabled)
                 return;
 
             var level = LogLevelHelper.GetLogLevel(logLevel);
-            if (level <= Api.LogLevel.Info)
+            if (level <= Api.Dto.LogLevel.Info)
                 return;
 
             var message = formatter(state, exception);
@@ -46,7 +46,7 @@ namespace Zidium
             data.Add();
         }
 
-        public bool IsEnabled(Microsoft.Extensions.Logging.LogLevel logLevel)
+        public bool IsEnabled(LogLevel logLevel)
         {
             return _isEnabled;
         }

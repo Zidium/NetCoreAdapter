@@ -4,24 +4,24 @@ namespace Zidium
 {
     internal static class LogLevelHelper
     {
-        public static Api.LogLevel GetLogLevel(LogLevel logLevel)
+        public static Api.Dto.LogLevel GetLogLevel(LogLevel logLevel)
         {
             if (logLevel == LogLevel.Trace)
-                return Api.LogLevel.Trace;
+                return Api.Dto.LogLevel.Trace;
 
             if (logLevel == LogLevel.Debug)
-                return Api.LogLevel.Debug;
+                return Api.Dto.LogLevel.Debug;
 
             if (logLevel == LogLevel.Information || logLevel == LogLevel.None)
-                return Api.LogLevel.Info;
+                return Api.Dto.LogLevel.Info;
 
             if (logLevel == LogLevel.Warning)
-                return Api.LogLevel.Warning;
+                return Api.Dto.LogLevel.Warning;
 
             if (logLevel == LogLevel.Error)
-                return Api.LogLevel.Error;
-            
-            return Api.LogLevel.Fatal;
+                return Api.Dto.LogLevel.Error;
+
+            return Api.Dto.LogLevel.Fatal;
         }
     }
 }

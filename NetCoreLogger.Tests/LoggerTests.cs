@@ -35,7 +35,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Trace, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Trace, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -69,7 +69,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Debug, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Debug, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -103,7 +103,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Info, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Info, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -137,7 +137,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Warning, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Warning, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -171,7 +171,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Error, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Error, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -205,7 +205,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Fatal, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Fatal, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -249,7 +249,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Error, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Error, logMessage.Item2.Level);
             Assert.Equal("Test", logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -291,7 +291,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Info, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Info, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("NetCoreLogger.Tests.LoggerTests", logMessage.Item2.Context);
 
@@ -327,7 +327,7 @@ namespace NetCoreLogger.Tests
             Assert.Single(logMessages);
             var logMessage = logMessages[0];
             Assert.Equal(ComponentId, logMessage.Item1);
-            Assert.Equal(Zidium.Api.LogLevel.Fatal, logMessage.Item2.Level);
+            Assert.Equal(Zidium.Api.Dto.LogLevel.Fatal, logMessage.Item2.Level);
             Assert.Equal(text, logMessage.Item2.Message);
             Assert.Equal("CustomCategory", logMessage.Item2.Context);
 
@@ -340,7 +340,8 @@ namespace NetCoreLogger.Tests
         {
             get
             {
-                return Client.Instance.GetDefaultComponentControl().Info.Id;
+                var component = Client.Instance.GetDefaultComponentControl();
+                return component.Info?.Id ?? Guid.Empty;
             }
         }
     }

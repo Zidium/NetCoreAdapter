@@ -9,9 +9,11 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            var loggerFactory = new LoggerFactory();
-            loggerFactory.AddConsole();
-            loggerFactory.AddZidiumLog();
+            var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddConsole();
+                builder.AddZidiumLog();
+            });
 
             try
             {

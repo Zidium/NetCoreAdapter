@@ -1,20 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Zidium.NetCoreLogger</AssemblyName>
     <RootNamespace>Zidium</RootNamespace>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Version>1.0.7</Version>
+    <Version>2.0.0</Version>
     <Authors>Zidium</Authors>
     <Company>Zidium</Company>
     <Description>This is an official Zidium logger for .Net Core logging system</Description>
-    <PackageProjectUrl>http://zidium.net</PackageProjectUrl>
-    <PackageIconUrl>http://zidium.net/banners/nuget-icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://zidium.net</PackageProjectUrl>
+    <PackageIconUrl>https://zidium.net/banners/nuget-icon.png</PackageIconUrl>
     <PackageTags>Zidium monitoring events unittests metrics log loggerFactory</PackageTags>
-    <PackageReleaseNotes>Using https by default</PackageReleaseNotes>
+    <PackageReleaseNotes>Using zidium api 2.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,8 +22,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.2" />
-    <PackageReference Include="Zidium.Api.NetCore" Version="1.0.23" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.2" />
+    <PackageReference Include="Zidium.Api" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

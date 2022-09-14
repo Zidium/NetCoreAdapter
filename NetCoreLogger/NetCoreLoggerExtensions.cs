@@ -16,5 +16,17 @@ namespace Zidium
             loggerFactory.AddProvider(new NetCoreLoggerErrorsProvider(componentId, expectedCategoryName));
             return loggerFactory;
         }
+
+        public static ILoggingBuilder AddZidiumLog(this ILoggingBuilder builder, Guid? componentId = null, string expectedCategoryName = null)
+        {
+            builder.AddProvider(new NetCoreLoggerLogProvider(componentId, expectedCategoryName));
+            return builder;
+        }
+
+        public static ILoggingBuilder AddZidiumErrors(this ILoggingBuilder builder, Guid? componentId = null, string expectedCategoryName = null)
+        {
+            builder.AddProvider(new NetCoreLoggerErrorsProvider(componentId, expectedCategoryName));
+            return builder;
+        }
     }
 }
